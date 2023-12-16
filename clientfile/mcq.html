@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Textbox Example</title>
+  <script src="mcq.js"></script>
+</head>
+<body>
+
+<form id="myForm">
+  <label for="questionType">Select Question Type:</label>
+  <select id="questionType" onchange="handleQuestionType()">
+    <option value="text">Text</option>
+    <option value="mcq">MCQ</option>
+  </select>
+
+  <div id="additionalInputContainer">
+    <!-- Additional input will be added here dynamically -->
+  </div>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+// function handleQuestionType() {
+//   var questionTypeSelect = document.getElementById('questionType');
+//   var additionalInputContainer = document.getElementById('additionalInputContainer');
+
+//   // Clear previous additional input
+//   additionalInputContainer.innerHTML = '';
+
+//   if (questionTypeSelect.value === 'mcq') {
+//     // Create a textbox input for MCQ
+//     for (var i = 0; i < 4; i++) {
+//     var textBoxInput = document.createElement('input');
+//     textBoxInput.type = 'text';
+//     textBoxInput.name = 'mcqTextBox';
+//     textBoxInput.placeholder = 'Option';
+//     additionalInputContainer.appendChild(textBoxInput);
+//     var lineBreak = document.createElement('br');
+//     additionalInputContainer.appendChild(lineBreak);
+//     }
+    
+//   }
+//   // Add more conditions for other question types if needed
+// }
+
+// function addOption() {
+//   var additionalInputContainer = document.getElementById('additionalInputContainer');
+
+//   // Create a new textbox input for MCQ option
+//   var optionInput = document.createElement('input');
+//   optionInput.type = 'text';
+//   optionInput.name = 'mcqOption';
+//   optionInput.placeholder = 'Enter MCQ Option';
+//   additionalInputContainer.appendChild(optionInput);
+// }
+</script>
+
+</body>
+</html>

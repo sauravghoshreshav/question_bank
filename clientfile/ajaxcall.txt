@@ -1,0 +1,9 @@
+$.ajax ({
+    url: "",
+    type: "POST/GET",
+    datatype: "json",
+    data: {k1: v1,k2:v2,    action: "funcname"},
+    beforesend: function(){},
+    success: function(rsult){},
+    error: function(){},
+})
