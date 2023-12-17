@@ -49,75 +49,64 @@
     }
 ?>
 
-<html>
-    <head>
-        
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <script src="question.js"></script>
-        <title>Q_Paper</title>
-        <script src="/sem3/jQuery/jquery.js"></script>
-    </head>
-      
-    <body>
-       
-        <h2 style="text-align: center;">_-_-_-_Exam details displayed below_-_-_-_</h2><br>
-        <P style="text-align: center;">COURSE TITLE EXPECTED HERE
-            <?php
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scaled=1">
+    <title>Examination</title>
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="/sem3/CSS/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="/sem3/CSS/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src=/sem3/jQuery/jquery.js></script>
+    <script src="question.js"></script>
+    <title>Q_Paper</title>
+</head>
+
+<body>
+
+    <h2 style="text-align: center;">_-_-_-_Exam details displayed below_-_-_-_</h2><br>
+    <P style="text-align: center;">COURSE TITLE EXPECTED HERE
+        <?php
 
             ?>
-        </P>
-                              <!-- Displaying exam info  -->  
-        <div class="container" style="background:#3333ff"> 
-            <?php foreach ($examInfo as $row): ?>      <!--  start of for each loop  -->
-                <p class="data-item">
-                                                                                &nbsp&nbsp
-                    YEAR:         <span>  <?php echo $row['YEAR']; ?>           &nbsp&nbsp</span> 
-                    SEMESTER:     <span>  <?php echo $row['SEMESTER']; ?>           &nbsp&nbsp</span>
-                    EXAM: <span>  <?php echo $row['EXAMINATION']; ?>          &nbsp&nbsp</span>
-                    COURSE_CODE:  <span>  <?php echo $row['COURSE_CODE']; ?>    &nbsp&nbsp</span>
-                    FULL_MARKS:   <span>  <?php echo $row['FULL_MARKS']; ?>     &nbsp&nbsp</span>
-                    TIME:         <span>  <?php echo $row['TIME']; ?>           </span>
+    </P>
+    <!-- Displaying exam info  -->
+    <div class="container" style="background:#3333ff">
+        <?php foreach ($examInfo as $row): ?>
+        <!--  start of for each loop  -->
+        <p class="data-item">
+            &nbsp&nbsp
+            YEAR: <span> <?php echo $row['YEAR']; ?> &nbsp&nbsp</span>
+            SEMESTER: <span> <?php echo $row['SEMESTER']; ?> &nbsp&nbsp</span>
+            EXAM: <span> <?php echo $row['EXAMINATION']; ?> &nbsp&nbsp</span>
+            COURSE_CODE: <span> <?php echo $row['COURSE_CODE']; ?> &nbsp&nbsp</span>
+            FULL_MARKS: <span> <?php echo $row['FULL_MARKS']; ?> &nbsp&nbsp</span>
+            TIME: <span> <?php echo $row['TIME']; ?> </span>
+
+        </p>
+
+        <?php endforeach; ?>
+        <!-- end of for each loop  -->
+    </div>
+
+    <!-- Displaying question input box with Marks box  -->
+
+    <form id="questionForm" method="POST" action="question.php">
+
+        <p>Enter the Questions for the exam:</p>
+
+        <div id="questionContainer" style="">
+            <!-- parent div -->
             
-                </p>
+        </div>
 
-            <?php endforeach; ?>                    <!-- end of for each loop  -->                         
-        </div>        
+        <button style="display: block; margin: 0 auto;" type="button" onclick="addQuestion()">Add Question</button><br>
+        <input type="submit" value="Submit" style="display: block; margin: 0 auto;">
 
-                        <!-- Displaying question input box with Marks box  -->
+    </form>
+</body>
 
-            <form method="POST" action="question.php">
-
-                <p>Enter the Questions for the exam:</p>
-
-                <div id="questionContainer" style="">    <!-- parent div -->
-
-                    <label for="type">select question type:</label>            
-                    <select name="type" id="type">
-                        <option value="type">--Type--</option>
-                        <option  value="objective">Objective</option>
-                        <option value="subjectivegit">Subjective</option>
-                    </select><br>
-                    <!-- <label>Question:</label>
-                    <textarea rows="2" cols="60" name="questions[]" placeholder="Type here..."  oninput="adjustTextarea(this)"></textarea><br>
-
-                    <span style="padding-right:35px">Mark:</span>
-
-                    <input type="text" name="marks[]" placeholder="Marks"><br> -->
-
-                    <!-- <button type="button" onclick="removeQuestion(this)">Remove</button> -->
-                    <br><br>
-
-                </div>      
-
-                <button style="display: block; margin: 0 auto;" type="button" onclick="addQuestion()">Add Question</button><br>
-                <input style="display: block; margin: 0 auto;" type="submit" value="Submit">
-
-            </form>
-    <!--</div><br>       -->
-
-    </body>
 </html>
-
-
-
-
